@@ -62,9 +62,10 @@ namespace upc {
     /// \TODO Implement a rule to decide whether the sound is voiced or not.
     /// * You can use the standard features (pot, r1norm, rmaxnorm),
     ///   or compute and use other ones. 
-    if(rmaxnorm > this->urmax && (r1norm > this->ur1 || pot>this->upot)){
-      return false; //sonor
-    }
+    //if(rmaxnorm > this->urmax && (r1norm > this->ur1 || pot>this->upot)){
+     // return false; //sonor
+    //}
+    if(rmaxnorm >0.3)return false;
     return true; //sord
 
   }
@@ -91,7 +92,9 @@ namespace upc {
 	///    - The lag corresponding to the maximum value of the pitch.
     ///	   .
 	/// In either case, the lag should not exceed that of the minimum value of the pitch.
-    for (iR = iRMax = (r.begin() + npitch_min); iR < (r.begin() + npitch_max); iR++){
+
+  
+    for (iR=iRMax=(r.begin() + npitch_min); iR < (r.begin() + npitch_max); iR++){
       if (*iR > *iRMax)
         iRMax = iR;
     }
