@@ -7,6 +7,9 @@ misma y distribuir copias locales (*clones*) del mismo a los distintos integrant
 
 Recuerde realizar el *pull request* al repositorio original una vez completada la práctica.
 
+NOTAS 
+// comentario
+///comentario que sale en el doc 
 Ejercicios básicos
 ------------------
 
