@@ -27,6 +27,9 @@ Usage:
 Options:
     -h, --help  Show this screen
     --version   Show the version of the project
+    -p, --upot=REAL   Umbral de potencia para la detección de sonoro/sordo [default: -16]
+    -1, --ur1=REAL    Umbral de la autocorrelación de 1 para sonoro/sordo [default: 0.3]
+    -m, --urmax=REAL     Umbral del maximo de la autocorrelación [default: 0.4]
 
 Arguments:
     input-wav   Wave file with the audio signal
