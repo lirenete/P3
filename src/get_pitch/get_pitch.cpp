@@ -66,7 +66,16 @@ int main(int argc, const char *argv[]) {
 
   /// \TODO
   /// Preprocess the input signal in order to ease pitch estimation. For instance,
+  //_____________________________________________________________________________________________________________hacerel central clipping
   /// central-clipping or low pass filtering may be used.
+  float max = *std::max_element(x.begin(), x.end());
+  float threshold = 0.027*max;
+
+  for (long unsigned int i = 0; i < x.size(); ++i) {
+    if (abs(x[i]) < threshold) {
+      x[i] = 0;
+    } 
+  }
   
   // Iterate for each frame and save values in f0 vector
   vector<float>::iterator iX;
@@ -78,6 +87,16 @@ int main(int argc, const char *argv[]) {
 
   /// \TODO
   /// Postprocess the estimation in order to supress errors. For instance, a median filter
+  //____________________________________________________________________________________________________________-hacer filtro de mediana 
+  vector<float> mediana;
+  mediana=f0;
+  mediana.begin()=f0.begin();
+  for (long unsigned int i = 1; i < f0.size() - 1; i++) {
+    std::vector<float> values = {f0[i-1], f0[i], f0[i+1]};
+    std::sort(values.begin(), values.end());
+    mediana[i]=values[1];
+  }
+  mediana.end()=f0.end();
   /// or time-warping may be used.
 
   // Write f0 contour into the output file
