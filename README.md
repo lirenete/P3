@@ -34,7 +34,7 @@ Ejercicios básicos
 
    * Implemente la regla de decisión sonoro o sordo e inserte el código correspondiente.
 
-   ![Alt text](image-4.png)
+   ![Alt text](image-11.png)
 
    * Puede serle útil seguir las instrucciones contenidas en el documento adjunto `código.pdf`.
 
@@ -72,7 +72,7 @@ Ejercicios básicos
   Los vaolures que hemos utilizado para optimizar el sistema son:
 
   - Umbral de potencia para la detección de sonoro/sordo = -16 dB
-  - Umbral de la autocorrelación de 1 para sonoro/sordo = 0.3
+  - Umbral de la autocorrelación de 1 para sonoro/sordo = 0.4
   - Umbral del maximo de la autocorrelación = 0.4
   - Para el central clippin, umbral de valor, 0.027 valor*máximo de la señal
   - Para el filtro de mediana, orden del filtro = 3

@@ -62,7 +62,11 @@ namespace upc {
     /// \TODO Implement a rule to decide whether the sound is voiced or not.
     /// * You can use the standard features (pot, r1norm, rmaxnorm),
     ///   or compute and use other ones. 
-    if(rmaxnorm > 0.4 && (r1norm > 0.4 || pot> -16)){
+    float ur1 = 0.4;
+    float urmax = 0.4;
+    float upot = -16;
+
+    if(rmaxnorm > urmax && (r1norm > ur1 || pot> upot)){
       return false; //sonor
     }
     return true;
