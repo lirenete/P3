@@ -66,8 +66,8 @@ int main(int argc, const char *argv[]) {
 
   /// \TODO
   /// Preprocess the input signal in order to ease pitch estimation. For instance,
-  //_____________________________________________________________________________________________________________hacerel central clipping
   /// central-clipping or low pass filtering may be used.
+  // Central clipping
   float max = *std::max_element(x.begin(), x.end());
   float threshold = 0.027*max;
 
@@ -87,7 +87,7 @@ int main(int argc, const char *argv[]) {
 
   /// \TODO
   /// Postprocess the estimation in order to supress errors. For instance, a median filter
-  //____________________________________________________________________________________________________________-hacer filtro de mediana 
+  // Filtro de mediana 
   vector<float> mediana;
   mediana=f0;
   mediana.begin()=f0.begin();

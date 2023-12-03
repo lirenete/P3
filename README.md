@@ -18,6 +18,8 @@ Ejercicios básicos
 
    * Complete el cálculo de la autocorrelación e inserte a continuación el código correspondiente.
 
+   ![Alt text](image-1.png)
+
    * Inserte una gŕafica donde, en un *subplot*, se vea con claridad la señal temporal de un segmento de
      unos 30 ms de un fonema sonoro y su periodo de pitch; y, en otro *subplot*, se vea con claridad la
 	 autocorrelación de la señal y la posición del primer máximo secundario.
@@ -28,7 +30,11 @@ Ejercicios básicos
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
      autocorrelación. Inserte a continuación el código correspondiente.
 
+    ![Alt text](image-2.png)
+
    * Implemente la regla de decisión sonoro o sordo e inserte el código correspondiente.
+
+   ![Alt text](image-4.png)
 
    * Puede serle útil seguir las instrucciones contenidas en el documento adjunto `código.pdf`.
 
@@ -48,9 +54,13 @@ Ejercicios básicos
 	    Recuerde configurar los paneles de datos para que el desplazamiento de ventana sea el adecuado, que
 		en esta práctica es de 15 ms.
 
+    ![Alt text](image-5.png)
+
       - Use el estimador de pitch implementado en el programa `wavesurfer` en una señal de prueba y compare
 	    su resultado con el obtenido por la mejor versión de su propio sistema.  Inserte una gráfica
 		ilustrativa del resultado de ambos estimadores.
+
+    ![Alt text](image-6.png)
      
 		Aunque puede usar el propio Wavesurfer para obtener la representación, se valorará
 	 	el uso de alternativas de mayor calidad (particularmente Python).
@@ -58,6 +68,17 @@ Ejercicios básicos
   * Optimice los parámetros de su sistema de estimación de pitch e inserte una tabla con las tasas de error
     y el *score* TOTAL proporcionados por `pitch_evaluate` en la evaluación de la base de datos 
 	`pitch_db/train`..
+
+  Los vaolures que hemos utilizado para optimizar el sistema son:
+
+  - Umbral de potencia para la detección de sonoro/sordo = -16 dB
+  - Umbral de la autocorrelación de 1 para sonoro/sordo = 0.3
+  - Umbral del maximo de la autocorrelación = 0.4
+  - Para el central clippin, umbral de valor, 0.027 valor*máximo de la señal
+  - Para el filtro de mediana, orden del filtro = 3
+
+  ![Alt text](image-7.png)
+
 
 Ejercicios de ampliación
 ------------------------
@@ -71,6 +92,8 @@ Ejercicios de ampliación
 
   * Inserte un *pantallazo* en el que se vea el mensaje de ayuda del programa y un ejemplo de utilización
     con los argumentos añadidos.
+
+    ![Alt text](image-8.png)
 
 - Implemente las técnicas que considere oportunas para optimizar las prestaciones del sistema de estimación
   de pitch.
@@ -95,6 +118,16 @@ Ejercicios de ampliación
   También se valorará la realización de un estudio de los parámetros involucrados. Por ejemplo, si se opta
   por implementar el filtro de mediana, se valorará el análisis de los resultados obtenidos en función de
   la longitud del filtro.
+
+  Tecnicas utilizadas para la mejora del sitema de estimación de pitch:
+
+  - Center Clipping:
+
+  ![Alt text](image-9.png)
+
+  - Filtro de Mediana:
+
+  ![Alt text](image-10.png)
    
 
 Evaluación *ciega* del estimador
